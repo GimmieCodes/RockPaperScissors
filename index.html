@@ -15,7 +15,6 @@
                 return "SCISSORS";
         }
         const playerSelection = "SCISSORS";
-        const computerSelection = computerPlay();
         
         function play(playerSelection, computerSelection){
             console.log(playerSelection);
@@ -54,15 +53,14 @@
             }else{
                 return console.log("error")
             }
-            function game(){
-                
-                for (let i = 0; i < 5; i++){
-                    play(playerSelection, computerSelection);
-                    
-                }
-            }
         }
-                play(playerSelection, computerSelection)
+        function game(){
+            for (let i = 0; i < 5; i++){
+                const computerSelection = computerPlay();
+                console.log(play("ROCK", computerSelection));
+             }
+        }
+        game()
     </script>
 </body>
 </html>
