@@ -5,6 +5,8 @@
     </head>
 <body>
     <script>
+        let player = 0
+        let comp = 0
         function computerPlay(){
             let randomNumber = Math.floor(Math.random()*100)
             if (randomNumber <= 33){
@@ -20,33 +22,33 @@
             console.log(playerSelection);
             console.log(computerSelection);
             if (playerSelection == computerSelection){
-                return console.log("It's a tie!");
+                return "It's a tie!";
             }else if (playerSelection !== computerSelection){
                 if (computerSelection == "SCISSORS"){
                     if (playerSelection == "PAPER"){
-                        return console.log("YOU LOSE!");
+                        return comp++;
                     }else{
-                    return console.log("YOU WIN!");
+                    return player++;
                     }
                 }else if(computerSelection == "PAPER"){
                     if (playerSelection == "ROCK"){
-                        return console.log("YOU LOSE!");
+                        return comp++;
                     }else if (playerSelection == "SCISSORS"){
-                        return console.log("YOU WIN!")
+                        return player++
                     }
                 }else if (computerSelection == "ROCK"){
                     if (playerSelection == "PAPER"){
-                        return console.log("YOU WIN!");
+                        return player++;
                     }else if (playerSelection == "SCISSORS"){
-                        return console.log("YOU LOSE!")
+                        return comp++
                     }
                 }else if (computerSelection == "SCISSORS"){
                     if (playerSelection == "ROCK"){
-                        return console.log("YOU WIN!");
+                        return player++;
                     }
                 }else if (computerSelection == "ROCK"){
                     if (playerSelection == "SCISSORS"){
-                        return console.log("YOU LOSE!")
+                        return comp++
                     }
                 }
 
@@ -54,10 +56,18 @@
                 return console.log("error")
             }
         }
+        
         function game(){
             for (let i = 0; i < 5; i++){
                 const computerSelection = computerPlay();
-                console.log(play("ROCK", computerSelection));
+                play(prompt(""), computerSelection);
+             }
+             if (comp > player){
+                 console.log("YOU LOST")
+             }else if (comp < player){
+                 console.log("YOU WON")
+             }else{
+                 console.log("TIE")
              }
         }
         game()
