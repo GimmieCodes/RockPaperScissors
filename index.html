@@ -16,39 +16,41 @@
             } else (randomNumber <= 99)
                 return "SCISSORS";
         }
-        const playerSelection = "SCISSORS";
         
         function play(playerSelection, computerSelection){
             console.log(playerSelection);
             console.log(computerSelection);
+            if (playerSelection == undefined){
+                return alert("please choose Rock, Paper, or Scissors.");
+            }
             if (playerSelection == computerSelection){
-                return "It's a tie!";
+                return console.log("It's a tie!");
             }else if (playerSelection !== computerSelection){
                 if (computerSelection == "SCISSORS"){
                     if (playerSelection == "PAPER"){
-                        return comp++;
+                        return comp++, console.log("You lose scissors beats paper.");
                     }else{
                     return player++;
                     }
                 }else if(computerSelection == "PAPER"){
                     if (playerSelection == "ROCK"){
-                        return comp++;
+                        return comp++, console.log("You lose paper beats rock.");
                     }else if (playerSelection == "SCISSORS"){
-                        return player++
+                        return player++, console.log("You win scissors beats paper.");
                     }
                 }else if (computerSelection == "ROCK"){
                     if (playerSelection == "PAPER"){
-                        return player++;
+                        return player++, console.log("You win paper beats rock.");
                     }else if (playerSelection == "SCISSORS"){
-                        return comp++
+                        return comp++, console.log("You lost rock beats scissors.");
                     }
                 }else if (computerSelection == "SCISSORS"){
                     if (playerSelection == "ROCK"){
-                        return player++;
+                        return player++, console.log("You win rock beats scissors.");
                     }
                 }else if (computerSelection == "ROCK"){
                     if (playerSelection == "SCISSORS"){
-                        return comp++
+                        return comp++, console.log("You lost rock beats scissors.")
                     }
                 }
 
@@ -60,13 +62,13 @@
         function game(){
             for (let i = 0; i < 5; i++){
                 const computerSelection = computerPlay();
-                play(prompt(""), computerSelection);
+                play(prompt("Rock, Paper, Scissors","").toUpperCase(), computerSelection);
              }
              if (comp > player){
                  console.log("YOU LOST")
              }else if (comp < player){
                  console.log("YOU WON")
-             }else{
+             }else if(comp == player){
                  console.log("TIE")
              }
         }
