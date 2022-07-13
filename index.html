@@ -20,9 +20,6 @@
         function play(playerSelection, computerSelection){
             console.log(playerSelection);
             console.log(computerSelection);
-            if (playerSelection == undefined){
-                return alert("please choose Rock, Paper, or Scissors.");
-            }
             if (playerSelection == computerSelection){
                 return console.log("It's a tie!");
             }else if (playerSelection !== computerSelection){
@@ -63,6 +60,7 @@
             for (let i = 0; i < 5; i++){
                 const computerSelection = computerPlay();
                 play(prompt("Rock, Paper, Scissors","").toUpperCase(), computerSelection);
+            }
              }
              if (comp > player){
                  console.log("YOU LOST")
@@ -71,7 +69,6 @@
              }else if(comp == player){
                  console.log("TIE")
              }
-        }
         game()
     </script>
 </body>
