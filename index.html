@@ -2,75 +2,34 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <script src = "Jscript.js" defer></script>
+        <link rel ="stylesheet" href="style.css">
     </head>
 <body>
-    <script>
-        let player = 0
-        let comp = 0
-        function computerPlay(){
-            let randomNumber = Math.floor(Math.random()*100)
-            if (randomNumber <= 33){
-                return "ROCK";
-            } else if (randomNumber <= 66 ){
-                return "PAPER";
-            } else (randomNumber <= 99)
-                return "SCISSORS";
-        }
-        
-        function play(playerSelection, computerSelection){
-            console.log(playerSelection);
-            console.log(computerSelection);
-            if (playerSelection == computerSelection){
-                return console.log("It's a tie!");
-            }else if (playerSelection !== computerSelection){
-                if (computerSelection == "SCISSORS"){
-                    if (playerSelection == "PAPER"){
-                        return comp++, console.log("You lose scissors beats paper.");
-                    }else if (playerSelection == "ROCK"){
-                        return player++, console.log("You win rock beats scissors");
-                    }
-                }else if(computerSelection == "PAPER"){
-                    if (playerSelection == "ROCK"){
-                        return comp++, console.log("You lose paper beats rock.");
-                    }else if (playerSelection == "SCISSORS"){
-                        return player++, console.log("You win scissors beats paper.");
-                    }
-                }else if (computerSelection == "ROCK"){
-                    if (playerSelection == "PAPER"){
-                        return player++, console.log("You win paper beats rock.");
-                    }else if (playerSelection == "SCISSORS"){
-                        return comp++, console.log("You lost rock beats scissors.");
-                    }
-                }else if (computerSelection == "SCISSORS"){
-                    if (playerSelection == "ROCK"){
-                        return player++, console.log("You win rock beats scissors.");
-                    }
-                }else if (computerSelection == "ROCK"){
-                    if (playerSelection == "SCISSORS"){
-                        return comp++, console.log("You lost rock beats scissors.")
-                    }
-                }
+    <div class="header">
+        ROCK - PAPER - SCISSORS
+    </div>
+    <div id="choiceContainer"></div>
+    <div class = container2>
+        <div id="container">
+        </div>
 
-            }else{
-                return console.log("error")
-            }
-        }
-        
-        function game(){
-            for (let i = 0; i < 5; i++){
-                const computerSelection = computerPlay();
-                play(prompt("Rock, Paper, Scissors","").toUpperCase(), computerSelection);
-            
-             }
-             if (comp > player){
-                 console.log("YOU LOST")
-             }else if (comp < player){
-                 console.log("YOU WON")
-             }else if(comp == player){
-                 console.log("TIE")
-             }
-            }
-        game()
-    </script>
+        <div class="buttonContainer">
+         <button id = "btn1">Rock</button>
+         <button id = "btn2">Paper</button>
+         <button id = "btn3">Scissors</button>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
